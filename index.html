@@ -4,43 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Site Informatif</title>
+    <title>L'INSA pratique</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="src/img/logo.png" type="image/x-icon">
 </head>
 
 <body>
     <header>
         <nav>
-            <h1>Nom du Site</h1>
+            <h style="font-size: 36px; font-weight: bold;">L'INSA pratique</h>
             <ul>
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <a href="index.html" class="active">Accueil</a>
+                <a href="guides.html">Guides</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
             </ul>
         </nav>
     </header>
+    
+    <br>
 
     <main>
-        <section id="home">
-            <h2>Bienvenue sur notre site informatif</h2>
-            <p>Ce site vous offre des informations précieuses et actualisées sur divers sujets.</p>
-            <button><a href="#about">En savoir plus</a></button>
-        </section>
-
-        <section id="about">
-            <h2>À propos de nous</h2>
-            <p>Nous sommes une équipe dédiée à fournir des informations de qualité sur divers domaines tels que la technologie, la santé, l'environnement, et bien plus encore.</p>
-        </section>
-
-        <section id="services">
-            <h2>Nos Services</h2>
-            <ul>
-                <li>Consultation</li>
-                <li>Rapports personnalisés</li>
-                <li>Formation en ligne</li>
-            </ul>
-        </section>
+            <h style="font-size: 36px; font-weight: bold;">Vous vous sentez perdu à l'INSA ?</h>
+            <br>
+            <h style="font-size: 30px;">Alors cliquez sur ce bouton</h>
+            <br>
+            <br>
+            <a href="#" id="infoButton" class="btn-flip" data-back="a" data-front="Obtenir des informations"></a>
     </main>
 
     <footer>
@@ -49,3 +39,23 @@
     </footer>
 </body>
 </html>
+
+<script>
+    var texts = [
+    "...car je ne sais pas installer le VPN",
+    "...car je ne trouve pas les horaires du service courrier",
+    "...car SolidEdge ne fonctionne pas",
+    "...car je ne saisis pas comment consulter mes mails",
+    "...car je ne sais pas où chercher le menu du RI",
+    "...car je ne comprends pas où sont mes notes",
+    "...car l'installation de la VM me casse la tête",
+    "...car je ne trouve pas où est le petit étang de la Doua",
+    ];
+
+    var button = document.getElementById('infoButton');
+    button.addEventListener('mouseover', function() {
+        var randomText = texts[Math.floor(Math.random() * texts.length)];
+        button.setAttribute('data-back', randomText);
+    });
+
+</script>
